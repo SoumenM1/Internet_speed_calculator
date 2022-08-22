@@ -9,8 +9,9 @@ body {
     background: linear-gradient(45deg, #14222e, #2c3c4a);
     color: #eaeaea;
 }
-*.hide{
-   display: none !important; 
+
+*.hide {
+    display: none !important;
 }
 
 
@@ -25,7 +26,7 @@ body {
     background-color: #223140;
     border-radius: 24px;
     text-align: center;
-    box-shadow: -16px 16px 16px 8px rgba(0,0,0,0.2);
+    box-shadow: -16px 16px 16px 8px rgba(0, 0, 0, 0.2);
 
 }
 
@@ -64,47 +65,48 @@ body {
     filter: drop-shadow(0 0 12px #01b6be);
 }
 
-.loader-widget h1{
-   line-height: 1.3;
-   margin-bottom: 32px; 
-   color: #aaffff;
-   text-shadow: 0 0 8px #81ecec;
+.loader-widget h1 {
+    line-height: 1.3;
+    margin-bottom: 32px;
+    color: #aaffff;
+    text-shadow: 0 0 8px #81ecec;
 }
 
-.loader-content{
+.loader-content {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.loader-content button{
+.loader-content button {
     position: relative;
     cursor: pointer;
-   height: 240px;
-  width: 240px;
-  font-size: 18px;
-  line-height: 1.5;
-  border-radius: 50%;  
-  background-color: #223140;
-  color: #eaeaea;
-  border: 0;
-  box-shadow: 0 0 12px #81ecec; 
-   
+    height: 240px;
+    width: 240px;
+    font-size: 18px;
+    line-height: 1.5;
+    border-radius: 50%;
+    background-color: #223140;
+    color: #eaeaea;
+    border: 0;
+    box-shadow: 0 0 12px #81ecec;
+
 }
+
 .loader-content.result button {
-  height: 120px;
-  width: 120px;
-  margin-top: 16px;
+    height: 120px;
+    width: 120px;
+    margin-top: 16px;
 
 }
 
 
-.loader-content button:hover{
-   background-color: #1f3c4e; 
+.loader-content button:hover {
+    background-color: #1f3c4e;
 }
 
-.loader-content button::before{
+.loader-content button::before {
     content: '';
     position: absolute;
     height: 100%;
@@ -116,42 +118,46 @@ body {
     animation: btRing 2s linear infinite;
 }
 
-@keyframes btRing{
-  60%, 100%{
-    height: calc(100% + 60px);
-    width: calc(100% + 60px);
-    top: -32px;
-    left: -32px;
-    opacity: 0;
-  }  
+@keyframes btRing {
+
+    60%,
+    100% {
+        height: calc(100% + 60px);
+        width: calc(100% + 60px);
+        top: -32px;
+        left: -32px;
+        opacity: 0;
+    }
 }
 
-.loader-content button::after{
+.loader-content button::after {
     content: '';
     position: absolute;
     height: calc(100% + 4px);
     width: calc(100% + 4px);
-    top:-2px;
+    top: -2px;
     left: -2px;
-    background: linear-gradient(45deg, #25476e,#c7ecee);
+    background: linear-gradient(45deg, #25476e, #c7ecee);
     z-index: -1;
     border-radius: 50%;
 
 }
-.content{
+
+.content {
     display: flex;
     width: 100%;
     font-size: 64px;
     margin: 12px 0 32px 0;
     flex-direction: column;
 }
-.content small{
+
+.content small {
     font-size: 40%;
 
 }
 
-h3{
-margin-top: 12%;
-color:hsl(240, 10%, 94%) ;
-text-align:center;
+h3 {
+    margin-top: 12%;
+    color: hsl(240, 10%, 94%);
+    text-align: center;
 }

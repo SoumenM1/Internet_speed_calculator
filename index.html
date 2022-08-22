@@ -22,56 +22,54 @@
         
     </div>
     <footer> <h3>Created By <br><span>@Soumen Maity</span></h3></span></footer>
-</body>
 
-
-
-<script>
-    document.querySelector('button').addEventListener('click', (e) => {
-        var imageLink = 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Tokyo_Sky_Tree_2012_%E2%85%A3.JPG',
-            downloadSize = 8185374, time_start, time_end,
-            downloadSrc = new Image();
-
-        document.querySelector('.loader-content').classList.add('hide');
-        document.querySelector('.loader').classList.remove('hide');
-        time_start = new Date().getTime();
-        var cacheImg = "?nn=" + time_start;
-        downloadSrc.src = imageLink + cacheImg;
-        console.log(downloadSrc);
-        downloadSrc.onload = function () {
-            // this function
-            time_end = new Date().getTime();
-            var timeDuration = (time_end - time_start) / 1000,
-                loadedBytes = downloadSize * 8;
-            totalSpeed = ((loadedBytes / timeDuration) / 1024 / 1024).toFixed(2);
-  
-            let i=0,speedOut;
-            const animate = () => {
-                if(i<totalSpeed){
-                    document.querySelector('.content').innerHTML = i.toFixed(2) + '<small>Mbps</small>';
-                    setTimeout(animate, 20);
-                    i+=1.02;
-                }else{
-                    document.querySelector('.content').innerHTML = totalSpeed + '<small>Mbps</small>';  
+    <script src="script.js"></script>
+ <!-- add sourcecode hide -->
+ <body oncontextmenu="return false"></body>
+ <script type="text/javascript">
+    function mousehandler(e) {
+        var myevent = (isNS) ? e : event;
+        var eventbutton = (isNS) ? myevent.which : myevent.button;
+        if ((eventbutton == 2) || (eventbutton == 3)) return false;
+    }
+    document.oncontextmenu = mischandler;
+    document.onmousedown = mousehandler;
+    document.onmouseup = mousehandler;
+    function disableCtrlKeyCombination(e) {
+        var forbiddenKeys = new Array("a", "s", "c", "x","u");
+        var key;
+        var isCtrl;
+        if (window.event) {
+            key = window.event.keyCode;
+            //IE
+            if (window.event.ctrlKey)
+                isCtrl = true;
+            else
+                isCtrl = false;
+        }
+        else {
+            key = e.which;
+            //firefox
+            if (e.ctrlKey)
+                isCtrl = true;
+            else
+                isCtrl = false;
+        }
+        if (isCtrl) {
+            for (i = 0; i < forbiddenKeys.length; i++) {
+                //case-insensitive comparation
+                if (forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase()) {
+                    return false;
                 }
             }
-            
-            animate();
-
-
-
-            document.querySelector('.content').innerHTML = totalSpeed + '<small>Mbps</small>';
-          document.querySelector('.loader-content').classList.remove('hide');
-            document.querySelector('.loader-content').classList.add('result');
-            document.querySelector('.loader').classList.add('hide');
-            document.querySelector('.content').classList.remove('hide');
-            e.target.innerText = 'CHECK AGAIN';
-
         }
-
-    })
-
+        return true;
+    }
 </script>
 
+
+
+</body>
+      
 
 </html>
