@@ -149,3 +149,9 @@ body {
     font-size: 40%;
 
 }
+
+h3{
+margin-top: 12%;
+color:hsl(240, 10%, 94%) ;
+text-align:center;
+}
